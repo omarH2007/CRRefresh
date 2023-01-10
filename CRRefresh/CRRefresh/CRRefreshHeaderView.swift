@@ -163,8 +163,10 @@ open class CRRefreshHeaderView: CRRefreshComponent {
                     beginRefreshing()
                     state = .refreshing
                 } else {
-                    state = .pulling
-                    isRecordingProgress = true
+                    if scrollView.isDragging || (animator.triggerManually && animator.isScrolling) {
+                        state = .pulling
+                        isRecordingProgress = true
+                    }
                 }
             }
         } else if offsets < 0 {
