@@ -44,6 +44,11 @@ public protocol CRRefreshProtocol {
     /// 延迟时悬停的高度
     var hold: CGFloat {set get}
     
+    /// set to true only if the scrolling done programmatically
+    var triggerManually: Bool {set get}
+    /// change this value to true or false based on scrolling behavior , this will have no affect if (triggerManually) is set to false
+    var isScrolling: Bool {set get}
+    
     /// 开始刷新
     mutating func refreshBegin(view: CRRefreshComponent)
     

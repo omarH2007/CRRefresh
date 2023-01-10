@@ -26,6 +26,9 @@
 import UIKit
 
 open class SlackLoadingAnimator: UIView, CRRefreshProtocol {
+
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
     
     open var view: UIView { return self }
     

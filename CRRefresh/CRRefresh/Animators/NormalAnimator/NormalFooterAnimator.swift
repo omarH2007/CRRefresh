@@ -40,6 +40,8 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     open var execute: CGFloat       = 50.0
     open var endDelay: CGFloat      = 0
     open var hold: CGFloat          = 50
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
     
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)

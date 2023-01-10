@@ -155,7 +155,11 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         let offsets = previousOffsetY + scrollViewInsets.top
         if offsets < -animator.trigger {
             if isRefreshing == false {
-                if scrollView.isDragging == false, state == .pulling {
+                if animator.triggerManually && !animator.isScrolling , state == .pulling{
+                    beginRefreshing()
+                    state = .refreshing
+                }
+                else if scrollView.isDragging == false && !animator.triggerManually, state == .pulling {
                     beginRefreshing()
                     state = .refreshing
                 } else {

@@ -39,6 +39,8 @@ open class RamotionAnimator: UIView, CRRefreshProtocol {
     
     open var hold: CGFloat     = 90
 
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
     
     var bounceLayer: RamotionBounceLayer?
     /// 上方wave的颜色

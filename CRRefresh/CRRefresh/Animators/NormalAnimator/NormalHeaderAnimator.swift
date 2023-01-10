@@ -45,7 +45,9 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     open var execute: CGFloat  = 60.0
     open var endDelay: CGFloat = 0
     public var hold: CGFloat   = 60
-
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
+    
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()
         imageView.image = crBundle?.imageFromBundle("refresh_arrow")

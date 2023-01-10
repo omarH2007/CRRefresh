@@ -38,6 +38,8 @@ open class FastAnimator: UIView, CRRefreshProtocol {
     open var endDelay: CGFloat = 1.5
     
     open var hold: CGFloat = 55.0
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
     
     private(set) var color: UIColor = .init(rgb: (214, 214, 214))
     

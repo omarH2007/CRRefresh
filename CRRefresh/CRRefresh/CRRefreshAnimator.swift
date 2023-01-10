@@ -38,6 +38,8 @@ open class CRRefreshAnimator: CRRefreshProtocol {
     open var endDelay: CGFloat = 0
     
     public var hold: CGFloat   = 60
+    open var triggerManually: Bool = false
+    open var isScrolling: Bool = false
     
     public init() {
         view = UIView()
