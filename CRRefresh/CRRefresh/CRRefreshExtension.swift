@@ -34,6 +34,8 @@ extension CRRefreshView {
     public var cr: CRRefreshDSL {
         return CRRefreshDSL(scroll: self)
     }
+    
+    
 }
 
 public struct CRRefreshDSL: CRRefreshViewProtocol {
@@ -85,6 +87,7 @@ public struct CRRefreshDSL: CRRefreshViewProtocol {
         var footRefresh = CRRefreshMake(scroll: scroll)
         footRefresh.removeFooter()
     }
+    
 }
 
 

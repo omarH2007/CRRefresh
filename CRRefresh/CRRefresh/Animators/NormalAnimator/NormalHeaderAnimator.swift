@@ -74,6 +74,11 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         self.addSubview(imageView)
         self.addSubview(titleLabel)
         self.addSubview(indicatorView)
+        
+        if let languageCode = Bundle.main.preferredLocalizations.first {
+            let isLanguageRTL = Locale.characterDirection(forLanguage: languageCode) == .rightToLeft
+            transform = isLanguageRTL ? CGAffineTransform(scaleX:-1,y: 1):CGAffineTransform(scaleX:1,y: 1)
+        }
     }
     
     public required init(coder aDecoder: NSCoder) {
@@ -148,5 +153,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
             imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - 28.0, y: (h - 18.0) / 2.0, width: 18.0, height: 18.0)
         }
     }
+    
+    
     
 }
