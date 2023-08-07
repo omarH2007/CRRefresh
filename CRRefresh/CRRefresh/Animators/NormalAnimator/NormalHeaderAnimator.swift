@@ -75,10 +75,8 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         self.addSubview(titleLabel)
         self.addSubview(indicatorView)
         
-        if let languageCode = Bundle.main.preferredLocalizations.first {
-            let isLanguageRTL = Locale.characterDirection(forLanguage: languageCode) == .rightToLeft
-            transform = isLanguageRTL ? CGAffineTransform(scaleX:-1,y: 1):CGAffineTransform(scaleX:1,y: 1)
-        }
+        let isLanguageRTL = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.semanticContentAttribute == .forceRightToLeft
+        transform = isLanguageRTL ? CGAffineTransform(scaleX:-1,y: 1):CGAffineTransform(scaleX:1,y: 1)
     }
     
     public required init(coder aDecoder: NSCoder) {
