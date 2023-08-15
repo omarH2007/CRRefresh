@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/CRAnimation/CRRefresh"
   s.license       = 'MIT'
   s.author        = { "W_C__L" => "wangchonglei93@icloud.com" }
-  s.platform      = :ios, "8.0" 
+  s.platform      = :ios, "13.0" 
   s.swift_version = '4.2'  
   s.source        = { :git => "https://github.com/CRAnimation/CRRefresh.git", :tag => s.version.to_s }
   s.source_files  = ['CRRefresh/CRRefresh/*.{swift}','CRRefresh/CRRefresh/Animators/**/*.{swift}']
