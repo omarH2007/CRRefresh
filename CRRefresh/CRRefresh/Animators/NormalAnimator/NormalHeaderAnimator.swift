@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     
@@ -47,6 +48,13 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     public var hold: CGFloat   = 60
     open var triggerManually: Bool = false
     open var isScrolling: Bool = false
+    open var indicatorColor: UIColor = .gray {
+        didSet{
+            titleLabel.textColor = indicatorColor
+            imageView.image = imageView.image?.withTintColor(indicatorColor)
+        }
+    }
+    open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader
     
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()

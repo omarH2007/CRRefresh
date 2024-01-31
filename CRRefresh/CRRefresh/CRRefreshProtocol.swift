@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 public protocol CRRefreshProtocol {
     /// 自定义的view
@@ -49,6 +50,10 @@ public protocol CRRefreshProtocol {
     /// change this value to true or false based on scrolling behavior , this will have no affect if (triggerManually) is set to false
     var isScrolling: Bool {set get}
     
+    var indicatorColor: UIColor {set get}
+    
+    var indicatorType: NVActivityIndicatorType {set get}
+
     /// 开始刷新
     mutating func refreshBegin(view: CRRefreshComponent)
     

@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     
@@ -42,6 +43,16 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     open var hold: CGFloat          = 50
     open var triggerManually: Bool = false
     open var isScrolling: Bool = false
+    open var indicatorColor: UIColor = .gray {
+        didSet{
+            indicatorView.color = indicatorColor
+        }
+    }
+    open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader {
+        didSet{
+            indicatorView.type = indicatorType
+        }
+    }
     
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
@@ -51,8 +62,8 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
         return label
     }()
     
-    fileprivate lazy var indicatorView: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView.init(style: .gray)
+    fileprivate lazy var indicatorView: NVActivityIndicatorView = {
+        let indicatorView = NVActivityIndicatorView(frame: .init(origin: .zero, size: .init(width: 40, height: 40)), type: indicatorType,color: indicatorColor)
         indicatorView.isHidden = true
         return indicatorView
     }()

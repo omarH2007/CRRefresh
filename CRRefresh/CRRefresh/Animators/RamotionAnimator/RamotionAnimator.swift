@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 open class RamotionAnimator: UIView, CRRefreshProtocol {
     
@@ -41,6 +42,9 @@ open class RamotionAnimator: UIView, CRRefreshProtocol {
 
     open var triggerManually: Bool = false
     open var isScrolling: Bool = false
+    
+    open var indicatorColor: UIColor = .gray
+    open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader
     
     var bounceLayer: RamotionBounceLayer?
     /// 上方wave的颜色

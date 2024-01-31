@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 open class FastAnimator: UIView, CRRefreshProtocol {
     
@@ -40,6 +41,8 @@ open class FastAnimator: UIView, CRRefreshProtocol {
     open var hold: CGFloat = 55.0
     open var triggerManually: Bool = false
     open var isScrolling: Bool = false
+    open var indicatorColor: UIColor = .gray
+    open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader
     
     private(set) var color: UIColor = .init(rgb: (214, 214, 214))
     

@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 open class SlackLoadingAnimator: UIView, CRRefreshProtocol {
 
@@ -41,6 +42,10 @@ open class SlackLoadingAnimator: UIView, CRRefreshProtocol {
     open var endDelay: CGFloat = 0
     
     open var hold: CGFloat     = 60
+    
+    open var indicatorColor: UIColor = .gray
+    open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader
+    
     
     var loadingView: WCLLoadingView = {
         let loadView = WCLLoadingView(frame: .init(x: 0, y: 0, width: 40, height: 40))

@@ -160,7 +160,7 @@ open class CRRefreshComponent: UIView {
 
 
 
-//MARK: Observer Methods 
+//MARK: Observer Methods
 extension CRRefreshComponent {
     
     fileprivate static var context            = "CRRefreshContext"
