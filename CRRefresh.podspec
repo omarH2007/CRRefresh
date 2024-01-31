@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
   s.resources     = 'CRRefresh/CRRefresh/Animators/**/*.{bundle}'
   s.frameworks    = "UIKit"
   s.requires_arc  = true
+  s.dependency 'NVActivityIndicatorView'
 
 end
