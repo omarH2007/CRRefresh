@@ -52,6 +52,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         didSet{
             titleLabel.textColor = indicatorColor
             imageView.image = imageView.image?.withTintColor(indicatorColor)
+            indicatorView.color = indicatorColor
         }
     }
     open var indicatorType: NVActivityIndicatorType = .lineSpinFadeLoader
@@ -71,7 +72,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     }()
     
     fileprivate let indicatorView: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView.init(style: .gray)
+        let indicatorView = UIActivityIndicatorView.init(style: .medium)
         indicatorView.isHidden = true
         return indicatorView
     }()
