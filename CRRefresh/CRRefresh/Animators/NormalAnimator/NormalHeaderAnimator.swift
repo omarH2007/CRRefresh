@@ -96,7 +96,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         indicatorView.startAnimating()
         indicatorView.isHidden = false
         imageView.isHidden     = true
-        titleLabel.text        = loadingDescription
+        titleLabel.isHidden     = true
         imageView.transform    = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(Double.pi))
     }
   
@@ -105,8 +105,10 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
             indicatorView.stopAnimating()
             indicatorView.isHidden = true
             imageView.isHidden = false
+            titleLabel.isHidden = false
             imageView.transform = CGAffineTransform.identity
         }else {
+            titleLabel.isHidden = false
             titleLabel.text = pullToRefreshDescription
             setNeedsLayout()
         }
@@ -147,6 +149,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         }
     }
 
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         let s = bounds.size
@@ -156,7 +159,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         UIView.performWithoutAnimation {
             titleLabel.sizeToFit()
             titleLabel.center = .init(x: w / 2.0, y: h / 2.0)
-            indicatorView.center = .init(x: titleLabel.frame.origin.x - 16.0, y: h / 2.0)
+            indicatorView.center = .init(x: titleLabel.frame.origin.x , y: h / 2.0)
             imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - 28.0, y: (h - 18.0) / 2.0, width: 18.0, height: 18.0)
         }
     }
