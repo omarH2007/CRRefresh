@@ -158,8 +158,8 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         
         UIView.performWithoutAnimation {
             titleLabel.sizeToFit()
-            titleLabel.center = .init(x: w / 2.0, y: h / 2.0)
-            indicatorView.center = .init(x: titleLabel.frame.origin.x , y: h / 2.0)
+            titleLabel.center = .init(x: (w / 2.0) + (46 / 4), y: h / 2.0)
+            indicatorView.center = .init(x: (w / 2.0) + (indicatorView.frame.width/2) , y: h / 2.0)
             imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - 28.0, y: (h - 18.0) / 2.0, width: 18.0, height: 18.0)
         }
     }
