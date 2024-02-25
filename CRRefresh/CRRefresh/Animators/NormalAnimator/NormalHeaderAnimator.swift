@@ -108,6 +108,8 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
             titleLabel.isHidden = false
             imageView.transform = CGAffineTransform.identity
         }else {
+            indicatorView.isHidden = true
+            imageView.isHidden     = false
             titleLabel.isHidden = false
             titleLabel.text = pullToRefreshDescription
             setNeedsLayout()
